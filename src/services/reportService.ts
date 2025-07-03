@@ -109,7 +109,7 @@ function processHealthData(ocrText: string): HealthParameter[] {
         // Test against full text
         const match = normalizedText.match(pattern);
         if (match) {
-          console.log(`  ✅ Match found:`, match[0]);
+          console.log(`   Match found:`, match[0]);
           const value = match[1];
           const numericValue = parseFloat(value);
           
@@ -132,16 +132,16 @@ function processHealthData(ocrText: string): HealthParameter[] {
               };
               
               parameters.push(newParam);
-              console.log(`  ✅ Added parameter:`, newParam);
+              console.log(`   Added parameter:`, newParam);
               break; // Found this parameter, move to next
             } else {
-              console.log(`  ⚠️ Parameter already exists:`, existingParam.name);
+              console.log(`   Parameter already exists:`, existingParam.name);
             }
           } else {
-            console.log(`  ❌ Invalid numeric value:`, value);
+            console.log(`   Invalid numeric value:`, value);
           }
         } else {
-          console.log(`  ❌ No match for pattern ${i + 1}`);
+          console.log(`   No match for pattern ${i + 1}`);
         }
       }
     }
@@ -270,7 +270,7 @@ function generateInsights(parameters: HealthParameter[]): string[] {
   const lowParams = parameters.filter(p => p.status === 'low');
   
   if (criticalParams.length > 0) {
-    insights.push(`⚠️ Critical Alert: ${criticalParams.map(p => p.name).join(', ')} require immediate medical attention.`);
+    insights.push(` Critical Alert: ${criticalParams.map(p => p.name).join(', ')} require immediate medical attention.`);
   }
   
   if (highParams.length > 0) {
