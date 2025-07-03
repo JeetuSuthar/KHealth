@@ -3,7 +3,7 @@ import { Mail, Lock, User, FileText, Activity } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 
 export default function LoginForm() {
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
