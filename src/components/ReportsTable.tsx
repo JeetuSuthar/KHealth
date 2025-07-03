@@ -10,6 +10,7 @@ import ReportDownload from './ReportDownload';
 interface ReportsTableProps {
   reports: LabReport[];
   setReports: React.Dispatch<React.SetStateAction<LabReport[]>>;
+  onDeleteReport: (reportId: string) => void;
 }
 
 export default function ReportsTable({ reports, setReports }: ReportsTableProps) {

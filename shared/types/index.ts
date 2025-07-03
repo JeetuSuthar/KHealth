@@ -22,6 +22,7 @@ export interface LabReport {
   parameters: HealthParameter[];
   insights: string[];
   reportType: string;
+  
 }
 
 export interface TrendData {
