@@ -270,43 +270,6 @@ export default function FileUpload({ onReportUploaded }: FileUploadProps) {
         </div>
       </div>
 
-      {/* Instructions */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-        <div className="flex items-start space-x-3">
-          <AlertCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
-          <div className="space-y-2">
-            <h3 className="font-medium text-blue-900">Upload Tips for Best Results</h3>
-            <ul className="text-sm text-blue-700 space-y-1">
-              <li>• <strong>Images (JPG/PNG):</strong> Uses OCR to extract actual text from your lab report</li>
-              <li>• <strong>PDF files:</strong> Shows sample lab data for demonstration</li>
-              <li>• Ensure images are clear, well-lit, and parameter values are visible</li>
-              <li>• Avoid blurry or skewed images for best OCR accuracy</li>
-              <li>• Try writing "Hemoglobin : 69" on paper and take a clear photo to test OCR</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Test Example */}
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-        <div className="flex items-start space-x-3">
-          <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-          <div className="space-y-2">
-            <h3 className="font-medium text-green-900">Test Examples</h3>
-            <div className="text-sm text-green-700 space-y-2">
-              <p><strong>For OCR Testing (Images):</strong></p>
-              <code className="block bg-white px-3 py-2 rounded text-green-800 font-mono text-xs">
-                Hemoglobin : 69<br />
-                Glucose : 95<br />
-                Cholesterol : 220<br />
-                HDL : 45
-              </code>
-              <p><strong>For PDF Testing:</strong> Upload any PDF file to see sample lab data</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Supported Parameters */}
       <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
         <h3 className="font-medium text-gray-900 mb-3">Supported Health Parameters</h3>

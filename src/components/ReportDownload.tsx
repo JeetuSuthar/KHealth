@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Download, FileText, Loader2 } from 'lucide-react';
 import jsPDF from 'jspdf';
 import { LabReport } from '../../shared/types';
@@ -31,12 +31,13 @@ export default function ReportDownload({ report, patientInfo }: ReportDownloadPr
         pdf.rect(x, y, width, height, 'F');
       };
 
-      const hexToRgb = (hex: string) => {
-        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-        return result
-          ? [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)]
-          : [0, 0, 0];
-      };
+      const hexToRgb = (hex: string): [number, number, number] => {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result
+    ? [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)]
+    : [0, 0, 0];
+};
+
 
       const addLine = (y: number, color: string = '#E5E7EB', width: number = 0.3) => {
         pdf.setDrawColor(...hexToRgb(color));
@@ -374,7 +375,7 @@ export default function ReportDownload({ report, patientInfo }: ReportDownloadPr
 
       <div className="flex items-center text-sm text-gray-600">
         <FileText className="h-4 w-4 mr-2" />
-        <span>Compact Professional Report • Karai Health</span>
+       
       </div>
     </div>
   );
